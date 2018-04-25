@@ -1,0 +1,30 @@
+<main role="main" class="container">
+  <div class="album py-5 bg-light">
+    <section class="container">
+      <h4 class="movie-section-title">Descobrir Novos Filmes e Séries</h4>
+      <div class="movie-section-filter">
+        <app-filter></app-filter>
+      </div>
+      <div class="row">
+        <div class="col-lg-6" *ngFor="let movie of movies?.results">
+          <app-movies-unit [movie]="movie"></app-movies-unit>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          Atualmente na página: {{movies?.page}} de {{movies?.total_pages}}
+          <br/>
+          <small class="text-muted">({{movies?.total_results}} resultados)</small>
+        </div>
+        <div class="col text-right">
+          <a class="page-nav" (click)="discoverMovies(prevPage)" *ngIf="movies?.page > 1">
+            <i class="fas fa-arrow-alt-circle-left"></i>
+          </a>
+          <a class="page-nav" (click)="discoverMovies(nextPage)" *ngIf="movies?.page !== movies?.total_pages">
+            <i class="fas fa-arrow-alt-circle-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

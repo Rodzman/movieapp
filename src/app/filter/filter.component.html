@@ -1,0 +1,38 @@
+<form [formGroup]="filterForm" novalidate>
+  <div class="container" style="padding:0;">
+    <div class="form-row">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <label for="ano">Ano</label>
+        <select class="form-control" formControlName="ano" (change)="filter(1,'',filterForm.value.ano)">
+          <option value="">Nenhum</option>
+          <option *ngFor="let year of years" value="{{year}}">{{year}}</option>
+        </select>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <label for="ordenar">Ordernar por</label>
+        <select class="form-control" formControlName="ordenar" (change)="filter(1,filterForm.value.ordenar)">
+          <option value="">Nenhum</option>
+          <option value="popularity.desc">Popularidade (maior)</option>
+          <option value="popularity.asc">Popularidade (menor)</option>
+          <option value="vote_average.desc">Avaliação (melhor)</option>
+          <option value="vote_average.asc">Avaliação (pior)</option>
+          <option value="primary_release_date.desc">Lançamento (novo)</option>
+          <option value="primary_release_date.asc">Lançamento (antigo)</option>
+          <option value="title.asc">Título (A–Z)</option>
+          <option value="title.desc">Título (Z–A)</option>
+        </select>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+          <label for="generos">Gêneros</label>
+          <select class="form-control" formControlName="generos" (click)="filter(1,'','',filterForm.value.generos)">
+            <option value="">Nenhum</option>
+            <option *ngFor="let genre of genres" value="{{genre.id}}">{{genre.name}}</option>
+          </select>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+          <label for="palavras">Palavras-chave</label>
+          <input type="text" class="form-control" formControlName="palavras">
+      </div>
+    </div>
+  </div>
+</form>
