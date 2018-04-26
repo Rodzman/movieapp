@@ -2,6 +2,10 @@
   "name": "atech-movieapp",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "main.js",
+  "engines": {
+    "node": "8.9.1"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -60,6 +64,10 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/rodmovieapp.git"
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.",
   "author": ""
