@@ -2,9 +2,9 @@
   "name": "atech-movieapp",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "main.js",
+  "main": "server.js",
   "engines": {
-    "node": "8.9.1"
+    "node": "8.11.1"
   },
   "scripts": {
     "ng": "ng",
