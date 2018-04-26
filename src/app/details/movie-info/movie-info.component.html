@@ -2,34 +2,34 @@
   Informações</h4>
 <p>
   <b>Título original</b>
-  <br/>{{movie.original_title}}
+  <br/>{{movie?.original_title}}
 </p>
 <p>
   <b>Situação</b>
-  <br/>{{movie.status}}
+  <br/>{{movie?.status}}
 </p>
 <p>
   <b>Idioma original</b>
-  <br/>{{movie.original_language}}
+  <br/>{{movie?.original_language}}
 </p>
 <p>
   <b>Duração</b>
-  <br/>{{movie.runtime}} min.
+  <br/>{{movie?.runtime}} min.
 </p>
 <p>
   <b>Orçamento</b>
-  <br/>{{movie.budget | currency:'USD': true}}
+  <br/>{{movie?.budget | currency:'USD': true}}
 </p>
 <p>
   <b>Receita</b>
-  <br/>{{movie.revenue | currency:'USD': true}}
+  <br/>{{movie?.revenue | currency:'USD': true}}
 </p>
 <div class="container">
   <div class="row">
     <b>Site</b>
   </div>
   <div class="row">
-    <div class="text-truncate"><a href="http://www.foxsearchlight.com/theshapeofwater/" target="_blank">{{movie.homepage}}</a></div>
+    <div class="text-truncate"><a href="http://www.foxsearchlight.com/theshapeofwater/" target="_blank">{{movie?.homepage}}</a></div>
   </div>
 </div><br/>
 <div class="container">

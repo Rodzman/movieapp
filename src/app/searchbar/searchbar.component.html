@@ -2,18 +2,16 @@
   <section class="search">
     <div class="sub_media">
       <form [formGroup]="searchForm">
-
-        <input type="hidden" name="language" value="pt-BR">
-
-        <span tabindex="-1" role="presentation" class="k-widget k-autocomplete k-header k-autocomplete-clearable k-state-default">
           <div class="container">
-            <input #iptSearch formControlName="searchControl" type="text" tabindex="2" autocorrect="off" autofill="off" autocomplete="off"
-              spellcheck="false" placeholder="Buscar por um Filme, Série ou Pessoa" value="" data-role="autocomplete" class="movie-input w-100 p-3"
-              role="textbox" aria-haspopup="true" aria-disabled="false" aria-readonly="false" aria-owns="search_v4_listbox" aria-autocomplete="list">
-            <span unselectable="on" class="k-icon k-clear-value k-i-close k-hidden" title="clear" role="button" tabindex="-1"></span>
-            <span class="k-icon k-i-loading" style="display:none"></span>
+            <input type="text" #iptSearch formControlName="searchControl" class="form-control movie-input w-100 p-3" placeholder="Buscar por um Filme, Série ou Pessoa">
+            <div class="container box-shadow search-results-box" (mouseleave)="toggle()">
+                <ng-container *ngIf="show">
+                  <div class="row search-results" *ngFor="let movie of movies?.results">
+                    <a [routerLink]="['/', movie.id]">{{movie.title}}</a>
+                  </div>
+                </ng-container>
+              </div>
           </div>
-        </span>
       </form>
     </div>
   </section>

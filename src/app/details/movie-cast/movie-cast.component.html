@@ -1,6 +1,6 @@
 <h4 class="title">Elenco Principal</h4>
 <div class="row">
-  <div *ngFor="let cast of credits.cast | slice:0:10" class="card movie-cast col-6 col-sm-4 col-md-3 col-lg-2">
+  <div *ngFor="let cast of credits?.cast | slice:0:10" class="card movie-cast col-6 col-sm-4 col-md-3 col-lg-2">
     <img class="card-img-top" *ngIf="cast.profile_path" src="https://image.tmdb.org/t/p/w138_and_h175_face{{cast.profile_path}}" alt="Card image cap">
     <img class="card-img-top" *ngIf="cast.profile_path == null" src="assets/img/generic-image.jpg" alt="Generic placeholder image">
     <div class="movie-cast-text">

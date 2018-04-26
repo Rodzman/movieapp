@@ -12,20 +12,29 @@ export class MoviesListComponent implements OnInit {
   movies: Discover
   page = 1
   nextPage:number
-  nextPageLink: string
   prevPage:number
-  prevPageLink: string
-  @Input() searchText:string
+  sort: string = ''
+  year: string = ''
+  genre: string = ''
 
   constructor(private movieService: MovieappService) { }
 
   ngOnInit() {
     this.discoverMovies(this.page)
     this.getPageLinks(this.page)
+    this.movieService.discoverMovies(this.page)
+    this.movies = this.movieService.movies
+  }
+
+  ngAfterContentInit() {
+    this.movies = this.movieService.movies
   }
 
   discoverMovies(page:number, sort?:string, year?:string, genre?:string){
-    this.movieService.discover(page, sort, year, genre).subscribe(movies => {
+    this.sort = !sort ? this.sort : sort
+    this.year = !year ? this.year : year
+    this.genre = !genre ? this.genre : genre
+    this.movieService.discover(page, this.sort, this.year, this.genre).subscribe(movies => {
       this.movies = movies
     })
     this.getPageLinks(page)

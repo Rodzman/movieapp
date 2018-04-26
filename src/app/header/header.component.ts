@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   filter(page:number, sort?:string, ano?:string, genre?:string){
-    this.movieService.discoverMovies(page, sort, ano, genre)
+    this.movieService.discover(page, sort, ano, genre)
   }
 
 }

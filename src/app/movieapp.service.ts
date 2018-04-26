@@ -11,9 +11,7 @@ export class MovieappService {
   APILang = 'pt-BR';
   movies: Discover;
   nextPage:number
-  nextPageLink: string
   prevPage:number
-  prevPageLink: string
 
   'https://api.themoviedb.org/3/movie/500?api_key=87bdc5828b3c424d2a3697760f2e31aa&language=pt-BR'
 
@@ -22,7 +20,6 @@ export class MovieappService {
   discover(page:number, sort?:string, year?:string, genre?:string): Observable<Discover>{
     sort = !sort ? '' : `&sort_by=${sort}`
     year = !year ? '' : `&year=${year}`
-    if(genre === '12'){console.log(genre)}else{console.log('aaa')}
     genre = !genre ? `/discover/movie` : `/genre/${genre}/movies`
     return this.http.get<Discover>(`${this.APIUrl}${genre}?api_key=${this.APIKey}&language=${this.APILang + sort}&page=${page + year}`)
   }
@@ -31,12 +28,11 @@ export class MovieappService {
     this.discover(page, sort, year, genre).subscribe(movies => {
       this.movies = movies
     })
-    this.getPageLinks(page)
   }
 
-  getPageLinks(page:number){
-    this.nextPage = page + 1
-    this.prevPage = page - 1
+  searchMovie(query:string): Observable<any>{
+    console.log(`${this.APIUrl}/search/movie?api_key=${this.APIKey}&language=${this.APILang}&query=${query}`)
+    return this.http.get<any>(`${this.APIUrl}/search/movie?api_key=${this.APIKey}&language=${this.APILang}&query=${query}`)
   }
 
   getGenres(): Observable<any>{
