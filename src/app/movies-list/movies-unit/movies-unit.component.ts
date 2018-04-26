@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DiscoverItem } from '../../movieapp.model';
+import { DetailsComponent } from '../../details/details.component';
+import { MovieappService } from '../../movieapp.service';
 
 @Component({
   selector: 'app-movies-unit',
@@ -13,7 +15,7 @@ export class MoviesUnitComponent implements OnInit {
   poster:string
 
 
-  constructor() { }
+  constructor(private movieService: MovieappService) { }
 
   ngOnInit() {
     this.getPosterUrl()
@@ -21,6 +23,10 @@ export class MoviesUnitComponent implements OnInit {
 
   getPosterUrl(){
     this.poster = this.imageUrl + this.movie.poster_path
+  }
+
+  getDetails(movieId: number){
+    this.movieService.getMovie(movieId)
   }
 
 }

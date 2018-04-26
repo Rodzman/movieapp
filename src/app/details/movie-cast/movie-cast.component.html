@@ -1,0 +1,12 @@
+<h4 class="title">Elenco Principal</h4>
+<div class="row">
+  <div *ngFor="let cast of credits.cast | slice:0:5" class="card movie-cast col-6 col-sm-4 col-md-3 col-lg-2">
+    <img class="card-img-top" src="https://image.tmdb.org/t/p/w138_and_h175_face{{cast.profile_path}}" alt="Card image cap">
+    <div class="movie-cast-text">
+      <p class="card-text">{{cast.name}}
+        <br/>
+        <i>"{{cast.character}}"</i>
+      </p>
+    </div>
+  </div>
+</div>

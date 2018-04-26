@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable'
-import { Discover, Genre } from './movieapp.model';
+import { Discover, Genre, Movie, Credits } from './movieapp.model';
 
 @Injectable()
 export class MovieappService {
@@ -9,6 +9,8 @@ export class MovieappService {
   APIKey = '87bdc5828b3c424d2a3697760f2e31aa';
   APIUrl = 'https://api.themoviedb.org/3';
   APILang = 'pt-BR';
+
+  'https://api.themoviedb.org/3/movie/500?api_key=87bdc5828b3c424d2a3697760f2e31aa&language=pt-BR'
 
   constructor(private http: HttpClient) { }
 
@@ -24,5 +26,12 @@ export class MovieappService {
     return this.http.get<any>(`${this.APIUrl}/genre/movie/list?api_key=${this.APIKey}&language=${this.APILang}`)
   }
 
+  getMovie(movieId:number): Observable<Movie>{
+    return this.http.get<Movie>(`${this.APIUrl}/movie/${movieId}?api_key=${this.APIKey}&language=${this.APILang}`)
+  }
+
+  getMovieCredits(movieId:number): Observable<Credits>{
+    return this.http.get<Credits>(`${this.APIUrl}/movie/${movieId}/credits?api_key=${this.APIKey}`)
+  }
 
 }

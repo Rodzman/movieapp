@@ -1,0 +1,17 @@
+.movie-cast {
+    padding: 0;
+}
+
+@media (min-width: 991.98px){
+    .movie-cast {
+        margin: 0 10px;
+    }
+}
+
+.movie-cast-text {
+    padding: 1rem;
+}
+
+.title {
+    line-height: 4.5rem;
+}

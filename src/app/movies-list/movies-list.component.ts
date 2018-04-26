@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MovieappService } from '../movieapp.service';
 import { Movie, DiscoverItem, Discover } from '../movieapp.model';
 
@@ -15,6 +15,7 @@ export class MoviesListComponent implements OnInit {
   nextPageLink: string
   prevPage:number
   prevPageLink: string
+  @Input() searchText:string
 
   constructor(private movieService: MovieappService) { }
 

@@ -1,0 +1,74 @@
+<section class="header large border first lazyloaded text-center" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w1400_and_h450_face' + movie.backdrop_path + ')', 'background-size': 'cover'  }">
+  <div class="custom_bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{movie.poster_path}}">
+        </div>
+        <div class="col text-left">
+          <div class="row">
+            <div class="col">
+              <h1 class="jumbotron-heading">{{movie.title}} ({{movie.release_date | date:'yyyy'}})</h1>
+              <p class="text-light original-title">{{movie.original_title}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="">Avaliação: {{movie.vote_average}}</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h4>Sinopse</h4>
+              <p class="lead text-light">{{movie.overview}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="inner-submenu">
+  <div class="container">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#">Discussões</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Resenha</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Vídeos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Imagens</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Alterações</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Reportar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Compartilhar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Editar</a>
+      </li>
+    </ul>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-sm-12">
+        <app-movie-cast [credits]="credits"></app-movie-cast>
+      </div>
+      <div class="col-lg-3 col-sm-12 movie-info">
+        <app-movie-info [movie]="movie"></app-movie-info>
+      </div>
+    </div>
+  </div>
+</section>
+<a routerLink="/">Voltar</a>
+
