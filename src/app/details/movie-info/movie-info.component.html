@@ -2,20 +2,48 @@
   Informações</h4>
 <p>
   <b>Título original</b>
-  <br/>{{movie.original_title}}</p>
+  <br/>{{movie.original_title}}
+</p>
 <p>
   <b>Situação</b>
-  <br/>{{movie.status}}</p>
+  <br/>{{movie.status}}
+</p>
 <p>
   <b>Idioma original</b>
-  <br/>{{movie.original_language}}</p>
+  <br/>{{movie.original_language}}
+</p>
 <p>
   <b>Duração</b>
-  <br/>{{movie.runtime}} min.</p>
+  <br/>{{movie.runtime}} min.
+</p>
 <p>
   <b>Orçamento</b>
-  <br/>{{movie.budget | currency:'USD': true}}</p>
+  <br/>{{movie.budget | currency:'USD': true}}
+</p>
 <p>
   <b>Receita</b>
-  <br/>{{movie.revenue | currency:'USD': true}}</p>
+  <br/>{{movie.revenue | currency:'USD': true}}
+</p>
+<div class="container">
+  <div class="row">
+    <b>Site</b>
+  </div>
+  <div class="row">
+    <div class="text-truncate"><a href="http://www.foxsearchlight.com/theshapeofwater/" target="_blank">{{movie.homepage}}</a></div>
+  </div>
+</div><br/>
+<div class="container">
+  <div class=row><b>Gêneros</b></div>
+  <div class="row">
+      <div *ngFor="let genre of genres" class="genres-box float-left">{{genre.name}}</div>
+  </div>
+</div><br/>
+<div class="container">
+  <div class="row">
+    <b>Palavras-chave</b>
+  </div>
+  <div class="row">
+    <div *ngFor="let keyword of keywords" class="genres-box float-left">{{keyword.name}}</div>
+  </div>
+</div>
 

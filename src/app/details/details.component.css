@@ -20,9 +20,9 @@ div.header.large.first.lazyloaded:before {
 }
 
 div.custom_bg {
-  background-image: radial-gradient(circle at 20% 50%, rgba(76.47%, 14.12%, 15.69%, 0.98) 0%, rgba(43.14%, 9.41%, 9.02%, 0.88) 100%);
-  padding: 70px 0 30px;
-  color: white;
+    background-image: radial-gradient(circle at 20% 50%, rgba(66, 60, 119, 0.9) 0%, rgba(24, 82, 79, 0.9) 100%);
+    padding: 70px 0 30px;
+    color: white;
 }
 
 .inner-submenu {
@@ -38,8 +38,21 @@ div.custom_bg {
 }
 
 .movie-info{
-    background: #e6e6e6;
-    padding-top: 20px;
+    background: #eee;
+    padding: 20px;
+    color: #666;
+}
+
+.avaliacao {
+    border-radius: 50%;
+    background: #081c24;
+    width: 60px;
+    height: 60px;
+    border: 4px solid #01d277; 
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 3.4rem;
 }
 
 

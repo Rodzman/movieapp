@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Movie } from '../../movieapp.model';
+import { Movie, Genre } from '../../movieapp.model';
 
 @Component({
   selector: 'app-movie-info',
@@ -9,6 +9,8 @@ import { Movie } from '../../movieapp.model';
 export class MovieInfoComponent implements OnInit {
 
   @Input() movie:Movie
+  @Input() genres:Genre
+  @Input() keywords:Genre
 
   constructor() { }
 

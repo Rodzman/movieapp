@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie, Credits } from '../movieapp.model';
+import { Movie, Credits, Genre, Keywords, Generic } from '../movieapp.model';
 import { MovieappService } from '../movieapp.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,6 +12,7 @@ export class DetailsComponent implements OnInit {
 
   movie:Movie
   credits: Credits
+  keywords: Generic
 
   constructor(private movieService: MovieappService, private route: ActivatedRoute) { }
 
@@ -20,6 +21,8 @@ export class DetailsComponent implements OnInit {
       .subscribe(movie => this.movie = movie)
     this.movieService.getMovieCredits(this.route.snapshot.params['id'])
       .subscribe(credits => this.credits = credits)
+    this.movieService.getMovieInfo(this.route.snapshot.params['id'])
+      .subscribe(keywords => this.keywords = keywords.keywords)
   }
 
 }

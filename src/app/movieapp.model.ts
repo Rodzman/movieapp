@@ -57,6 +57,16 @@ export interface Genre {
     name: string
 }
 
+export interface Keywords {
+    id: number,
+    keywords: Generic
+}
+
+export interface Generic {
+    id: number,
+    name: string
+}
+
 export interface Credits {
     id: number,
     cast: Cast,

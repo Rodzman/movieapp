@@ -16,7 +16,7 @@ export class FilterComponent implements OnInit {
   control: FormControlName
   input: any
   years: Array<any> = []
-  genres: Genre
+  genres = []
 
   constructor(private moviesListComponent: MoviesListComponent,
               private formBuilder: FormBuilder,
@@ -26,7 +26,6 @@ export class FilterComponent implements OnInit {
     this.generateForm()
     this.setYears()
     this.setGenres()
-    console.log(this.genres)
   }
 
   filter(page:number, sort?:string, ano?:string, genre?:string){
