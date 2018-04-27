@@ -2,26 +2,40 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
-## Development server
+# Technologies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Angular was chosen due to the fact that it is a well known technology, that suits the needs of the job both for its main target (SPA) but also for its being a light and fast framework and because I`m more confortable developing with it.
 
-## Code scaffolding
+I chose bootstrap as the css framework because is a well known CSS framework, has all the grid and layout 'shortcuts' and made the layout build process easier and faster. I componentized the css files inside angular, with each component having its own css.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The executable file was generated with Electron and Electron-packager.
 
-## Build
+# Techniques
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+I divided the app in several minor components for easier maintenability and scalability. It is divided like this:
 
-## Running unit tests
+- Header
+    - Searchbar (the top search bar)
+- movies-list (container)
+    - filter (the filter that changes the movies list)
+    - movies unit (each movie block)
+- details (details page)
+    - movie cast (cast info area)
+    - movie info (movie info area)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+It is all routed with the ROUTES module inside the app.
 
-## Running end-to-end tests
+The app was deployed to Heroku server as its a free and reliable nodejs web server that easily deploys our apps directly from the repository.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+The app is responsible and accesible both from desktops and smartphones.
 
-## Further help
+#Instructions
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The app can be accessed online on the following address: https://rodmovieapp.herokuapp.com/
+
+To download the original code, just clone the repository https://git.heroku.com/rodmovieapp.git on your computer. Later you can build it with 
+- 'ng-build --prod' (production)
+- 'ng-serve' (development)
+
+The executable can be downloaded on 
+
