@@ -37,5 +37,5 @@ To download the original code, just clone the repository https://git.heroku.com/
 - 'ng-build --prod' (production)
 - 'ng-serve' (development)
 
-The executable can be downloaded on 
+The executable can be downloaded on https://we.tl/d7dtNNBKWj
 
