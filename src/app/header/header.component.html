@@ -16,8 +16,10 @@
             </a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
-            <div class="dropdown-menu dropdown-content">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categorias
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a *ngFor="let genre of genres" class="dropdown-item" href="#" (click)="filter(1,'','',genre.id)">{{genre.name}}</a>
             </div>
           </li>
@@ -27,3 +29,4 @@
   </nav>
   <app-searchbar></app-searchbar>
 </header>
+
